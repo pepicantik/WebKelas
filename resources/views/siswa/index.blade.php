@@ -1,8 +1,8 @@
-{{-- @extends('layout.app')
+@extends('layouts.app')
 @section('title', 'Techsoftone')
-@section('content') --}}
-    <h1>Data Siswa XII RPL 1</h1>
-    <a href="{{ route('siswa.create') }}">Tambah Daftar Siswa</a>
+@section('konten')
+    <h1 class="mb-5">Data Siswa XII RPL 1</h1>
+    <a href="{{ route('siswa.create') }}" class="btn btn-success mb-3">Tambah Daftar Siswa</a>
     <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered">
@@ -41,4 +41,4 @@
             </table>
         </div>
     </div>
-{{-- @endsection --}}
+@endsection

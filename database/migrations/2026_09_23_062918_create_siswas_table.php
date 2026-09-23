@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tempat_lahir');
             $table->string('hobi');
             $table->string('image');
-            $table->enum('sosmed', ['tiktok', 'instagram']);
+            $table->string('sosmed');
             $table->timestamps();
         });
     }
