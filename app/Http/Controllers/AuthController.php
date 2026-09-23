@@ -21,11 +21,11 @@ class AuthController extends Controller
                     ->where('password', $request->password)
                     ->get();
 
-        if(!$key->isEmpty()){
+        if (!$key->isEmpty()) {
             session()->put('key', $key);
-            return redirect()->route('siswa.index');
+            return redirect('/home')->with('success', 'Anda Berhasil login');
         }
-        return redirect('/login');
+        return redirect('/login')->with('error', 'Anda tidak memiliki akun');
     }
 
     public function logout()

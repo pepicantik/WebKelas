@@ -18,19 +18,21 @@
                     <tr>
                         <td>{{ $siswa->firstItem() + $index }}</td>
                         <td>
-                            <img src="{{ url('storage/'. $b->image) }}" alt="" height="100px">
+                            <img src="{{ url('storage/'. $s->image) }}" alt="" height="100px">
                         </td>
                         <td>{{ $s->nama_lengkap }}</td>
                         <td>{{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</td>
-                        <td>
-                            <a href="{{ route('siswa.show', $b->id) }}" class="btn btn-outline-primary">Detail</a>
-                            <a href="{{ route('siswa.edit', $b->id) }}" class="btn btn-outline-warnning">Edit</a>
-                            <form action="{{ route('siswa.destroy', $b->id) }}" method="post">
+                        <td style="white-space: nowrap;">
+                            <div class="d-flex gap-2 flex-nowrap">
+                                <a href="{{ route('siswa.show', $s->id) }}" class="btn btn-outline-primary">Detail</a>
+                            <a href="{{ route('siswa.edit', $s->id) }}" class="btn btn-outline-warning">Edit</a>
+                            <form action="{{ route('siswa.destroy', $s->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 
                                 <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini???')">Hapus</button>
                             </form>
+                            </div>
                         </td>
                     </tr>
                 @empty
@@ -41,4 +43,5 @@
             </table>
         </div>
     </div>
+    {{ $siswa->links('pagination::bootstrap-5') }}
 @endsection

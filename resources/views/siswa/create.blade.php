@@ -3,7 +3,8 @@
 
 @section('konten')
     <h1 class="mb-5">Tambah Siswa</h1>
-    <form action="{{ route('siswa.store') }}" method="post">
+    <form action="{{ route('siswa.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <label for="" class="mb-1">Nama Lengkap</label>
         <input type="text" name="nama_lengkap" class="form-control mb-3" placeholder="Masukkan Nama Lengkap Siswa" required>
 

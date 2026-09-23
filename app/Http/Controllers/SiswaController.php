@@ -19,6 +19,10 @@ class SiswaController extends Controller
 
     public function index()
     {
+        if (!session()->has('key')) {
+            return redirect()->route('login')->with('error', 'Silahkan login terlebih dahulu');
+        }
+
         $siswa = Siswa::paginate(2);
         return view('siswa.index', compact('siswa'));
     }
@@ -28,6 +32,10 @@ class SiswaController extends Controller
      */
     public function create()
     {
+        if (!session()->has('key')) {
+            return redirect()->route('login')->with('error', 'Silahkan login terlebih dahulu');
+        }
+
         return view('siswa.create');
     }
 
@@ -40,34 +48,39 @@ class SiswaController extends Controller
         $input = $request->all();
         $input['image'] = "$image";
 
+        Siswa::create($input);
         return redirect()->route('siswa.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Siswa $siswa)
+    public function show(string $id)
     {
-        $siswa = Siswa::find($siswa);
+        $siswa = Siswa::find($id);
         return view('detail', compact('siswa'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Siswa $siswa)
+    public function edit(string $id)
     {
-        $siswa = Siswa::all($siswa);
+        if (!session()->has('key')) {
+            return redirect()->route('login')->with('error', 'Silahkan login terlebih dahulu');
+        }
+
+        $siswa = Siswa::find($id);
         return view('siswa.edit', compact('siswa'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Siswa $siswa)
+    public function update(Request $request, string $id)
     {
-        $siswa = $request->update();
-        if (session()->hasFile('image')) {
+        $siswa = Siswa::find($id);
+        if ($request->hasFile('image')) {
             $image = $request->file('image')->store('images', 'public');
             $siswa->image = $image;
         }
