@@ -14,7 +14,7 @@ class SiswaController extends Controller
      public function welcome()
     {
         $siswa = Siswa::all();
-        return view('welcome');
+        return view('welcome', compact('siswa'));
     }
      public function home()
     {
