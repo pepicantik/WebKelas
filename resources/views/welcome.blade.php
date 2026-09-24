@@ -183,16 +183,13 @@
         padding: 40px 50px;
     }
 
-
     /* =========================
     GRID
     ========================= */
 
     .siswa-grid {
         display: grid;
-
         grid-template-columns: repeat(6, 1fr);
-
         gap: 24px;
     }
 
@@ -203,22 +200,15 @@
 
     .siswa-card {
         background: #ffffff;
-
         border-radius: 12px;
-
         overflow: hidden;
-
-        box-shadow:
-            0 4px 15px rgba(0, 0, 0, 0.08);
-
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         transition: 0.3s ease;
     }
 
     .siswa-card:hover {
         transform: translateY(-6px);
-
-        box-shadow:
-            0 10px 30px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
 
@@ -229,12 +219,9 @@
     .siswa-image {
         width: 100%;
         height: 220px;
-
         display: block;
-
         object-fit: cover;
     }
-
 
     /* =========================
     CARD BODY
@@ -242,8 +229,8 @@
 
     .siswa-card-body {
         padding: 18px;
+        height: 130px;
     }
-
 
     /* =========================
     NAME
@@ -251,13 +238,10 @@
 
     .siswa-name {
         margin: 0 0 15px;
-
         font-size: 18px;
         font-weight: 700;
-
         color: #222;
     }
-
 
     /* =========================
     BUTTON
@@ -269,24 +253,15 @@
 
     .siswa-button {
         display: block;
-
         width: 100%;
-
         padding: 10px 15px;
-
         border: 1px solid #3152dc;
-
         border-radius: 8px;
-
         color: #3152dc;
-
         text-align: center;
-
         text-decoration: none;
-
         font-size: 13px;
         font-weight: 700;
-
         transition: 0.3s ease;
     }
 
@@ -294,7 +269,6 @@
         background: #3152dc;
         color: white;
     }
-
 
     /* =========================
     TABLET
@@ -308,7 +282,6 @@
 
     }
 
-
     /* =========================
     TABLET KECIL
     ========================= */
@@ -320,7 +293,6 @@
         }
 
     }
-
 
     /* =========================
     HP
@@ -351,6 +323,17 @@
 
     }
 
+    .tentang-kami{
+        padding: 10px 50px;
+    }
+    h2 {
+        margin: 50px 0;
+        color: black;
+        font-size: clamp(30px, 9vw, 30px);
+        line-height: 0.85;
+        font-weight: 900;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -415,10 +398,16 @@
 
       <div class="buttons">
         <a href="#siswa" class="btn">STUDENTS</a>
+        <a href="#tentang" class="btn">ABOUT US</a>
         <a href="#" class="btn">MOMENTS</a>
       </div>
     </div>
 </section>
+
+<div id="tentang" class="tentang-kami">
+    <h2>Tentang Kami</h2>
+    <p>Verra cantik, Pepi cantik, Indah cantik, Verra cantik, Pepi cantik, Indah cantik, Verra cantik, Pepi cantik, Indah cantik, Verra cantik, Pepi cantik, Indah cantik, Verra cantik, Pepi cantik, Indah cantik, Verra cantik, Pepi cantik, Indah cantik, Verra cantik, Pepi cantik, Indah cantik</p>
+</div>
 
 <div class="siswa-container" id="siswa">
 
