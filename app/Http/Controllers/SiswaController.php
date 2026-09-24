@@ -14,9 +14,13 @@ class SiswaController extends Controller
      public function welcome()
     {
         $siswa = Siswa::all();
-        return view('welcome', compact('siswa'));
+        return view('welcome');
     }
-
+     public function home()
+    {
+        $siswa = Siswa::all();
+        return view('home', compact('siswa'));
+    }
     public function index()
     {
         if (!session()->has('key')) {

@@ -19,11 +19,11 @@
 
         <label for="" class="mb-1">Sosmed</label>
         <input type="text" name="sosmed" class="form-control mb-3" placeholder="Masukkan Sosmed Siswa" required>
-        
+
         <label for="" class="mb-1">Gambar</label>
         <input type="file" name="image" class="form-control mb-3" required>
 
-        <button type="submit" class="btn btn-success">Tambah</button>
+        <button type="submit" class="btn btn-success">Simpan</button>
         <a href="{{ route('siswa.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 @endsection

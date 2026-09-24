@@ -20,10 +20,10 @@
 
         <label for="" class="mb-1">Sosmed</label>
         <input type="text" name="sosmed" class="form-control mb-3" value="{{ $siswa->sosmed }}" placeholder="Masukkan Sosmed Siswa" required>
-        
+
         <label for="" class="mb-1">Gambar</label>
+        <input type="file" name="image" class="form-control mb-3" >
         <p>file sebelumnya : <strong>{{ $siswa->image }}</strong></p>
-        <input type="file" name="image" class="form-control mb-3" required>
 
         <button type="submit" class="btn btn-success">Tambah</button>
         <a href="{{ route('siswa.index') }}" class="btn btn-secondary">Kembali</a>

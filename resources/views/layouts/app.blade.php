@@ -13,8 +13,12 @@
         <div class="container">
             <a href="/" class="navbar-brand">Techsoftone</a>
         @if (session()->has('key'))
+        <div class="">
+            <a href="/home" class="btn btn-outline-primary">Beranda</a>
+            <a href="/moment" class="btn btn-outline-primary">Moment</a>
             <a href="/siswa" class="btn btn-outline-primary">Data Siswa</a>
             <a href="/logout" class="btn btn-outline-primary">Logout</a>
+        </div>
         @else
             <a href="/login" class="btn btn-outline-primary">Login</a>
         @endif
