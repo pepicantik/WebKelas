@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sistem Informasi</title>
-
+   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
   <style>
     * {
       margin: 0;
@@ -23,7 +24,7 @@
     }
 
     .hero {
-      margin-top: 70px;
+      padding-top: 70px;
       position: relative;
       min-height: 100vh;
       overflow: hidden;
@@ -488,24 +489,46 @@
                 min-height: 200px;
             }
         }
+        .modal-content{
+            border: 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 5px 5px rgb(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        .modal-body{
+            padding: 40px;
+        }
+        .modal-short-line{
+            border: none;
+            border-top: 2px solid #2C3947;
+            width: 420px;
+            margin: 0 0 16px 0;
+        }
     </style>
 </head>
 
 <body>
     <section class="hero">
 
-        <nav class="navbar navbar-dark bg-dark">
+        <nav>
             <div class="logo">Techsoftone</div>
 
-            {{-- 
+            {{--
             <ul class="nav-links">
                 <li><a href="#">HOME</a></li>
                 <li><a href="#siswa">STUDENTS</a></li>
                 <li><a href="#">GALLERY</a></li>
             </ul>
             --}}
-
-            <a href="/login" class="login-btn">LOGIN</a>
+            
+            @if (session()->has('key'))
+            <div>
+                <a href="/home" class="login-btn">ADMIN</a>
+                <a href="/logout" class="login-btn">LOGOUT</a>
+            </div>
+                @else
+                <a href="/login" class="login-btn">LOGIN</a>
+            @endif
         </nav>
 
         <div class="hero-content">
@@ -560,19 +583,45 @@
 
         <div class="siswa-grid">
 
-            @foreach($siswa as $s)
-                <div class="siswa-item">
-                    <div class="siswa-card">
-                        <img src="{{ url('storage/' . $s->image) }}" alt="{{ $s->nama_lengkap }}" class="siswa-image">
-                        <div class="siswa-card-body">
-                            <h2 class="siswa-name">{{ $s->nama_lengkap }}</h2>
-                            <div class="siswa-action">
-                                <a href="{{ route('siswa.show', $s->id) }}"class="siswa-button">Selengkapnya...</a>
-                            </div>
+           @foreach($siswa as $s)
+    <div class="siswa-item">
+        <div class="siswa-card">
+            <img src="{{ url('storage/' . $s->image) }}" alt="{{ $s->nama_lengkap }}" class="siswa-image">
+            <div class="siswa-card-body">
+                <h2 class="siswa-name">{{ $s->nama_lengkap }}</h2>
+                <div class="siswa-action">
+                    <button type="button" class="siswa-button" data-bs-toggle="modal" data-bs-target="#modalSiswa{{ $s->id }}">
+                        Selengkapnya...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSiswa{{ $s->id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+                <div class="modal-body">
+                    <div class="d-flex gap-5 align-items-start mb-3">
+                        <img src="{{ url('storage/'. $s->image) }}" alt="" height="300px">
+                        <div>
+                            <h2 class="mb-4">{{ $s->nama_lengkap }}</h2>
+                            <p class="mb-4"><strong>Tempat, Tanggal Lahir :</strong> {{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</p>
+                            <hr class="modal-short-line">
+                            <p class="mb-4"><strong>Hobi :</strong> {{ $s->hobi }}</p>
+                            <hr class="modal-short-line">
+                            <p class="mb-4"><strong>Sosmed :</strong> {{ $s->sosmed }}</p>
                         </div>
                     </div>
                 </div>
-            @endforeach
+            </div>
+        </div>
+    </div>
+@endforeach
         </div>
     </div>
 </body>

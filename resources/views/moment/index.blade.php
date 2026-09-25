@@ -49,7 +49,7 @@
         background-color: #0C2C55;
     }
     .btn-aksi-create{
-        background-color: #3368A0;
+        background-color: #2F39A9;
         font-weight: 600;
         padding: 12px;
         border-radius: 12px;
