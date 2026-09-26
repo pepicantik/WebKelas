@@ -820,7 +820,7 @@
 
 
 
-    <section class="moment">
+    <section class="moment" id="momen">
         <h2>MOMENTS WITH XII RPL 1</h2>
 
         <p class="moment-subtitle">Kenangan, cerita, dan kebersamaan kita.</p>
