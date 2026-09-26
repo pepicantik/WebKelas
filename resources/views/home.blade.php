@@ -21,7 +21,7 @@
         display: grid;
         grid-template-columns: minmax(0, 1fr) 290px;
         gap: 20px;
-        align-items: start;
+        align-items: stretch;
     }
 
     .left-content,
@@ -29,6 +29,9 @@
         min-width: 0;
     }
 
+    .right-content {
+        display: flex;
+    }
 
     /* =========================
        WELCOME
@@ -87,7 +90,6 @@
         color: white;
     }
 
-
     /* =========================
        WELCOME ILLUSTRATION
     ========================= */
@@ -135,63 +137,6 @@
         bottom: 64px;
     }
 
-
-    /* =========================
-       PROFILE
-    ========================= */
-
-    .profile-card {
-        background: white;
-        border-radius: 18px;
-
-        padding: 20px;
-
-        min-height: 190px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-    }
-
-    .profile-card img {
-        width: 65px;
-        height: 65px;
-
-        border-radius: 50%;
-        object-fit: cover;
-
-        margin-bottom: 8px;
-    }
-
-    .profile-card h4 {
-        font-size: 13px;
-        margin: 4px 0;
-        color: #252b42;
-    }
-
-    .profile-card p {
-        font-size: 9px;
-        color: #999eaf;
-        margin-bottom: 10px;
-    }
-
-    .profile-card button {
-        border: none;
-
-        background: #3157d5;
-        color: white;
-
-        border-radius: 7px;
-
-        padding: 7px 18px;
-
-        font-size: 9px;
-    }
-
-
     /* =========================
        SECTION HEADER
     ========================= */
@@ -218,341 +163,252 @@
         margin: 5px 0 0;
     }
 
-    .section-header a {
-        text-decoration: none;
-        color: #3157d5;
-        font-size: 10px;
-    }
-
-
     /* =========================
-       CLASS
+       STUDENT STATISTICS
     ========================= */
 
-    .class-grid {
+    .student-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
     }
 
-    .class-card {
-        color: white;
+    .student-card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    }
 
+    .student-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 10px;
+
+        border-radius: 14px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 22px;
+
+        background: #edf1ff;
+        color: #3157d5;
+    }
+
+    .student-card h2 {
+        font-size: 25px;
+        font-weight: 700;
+        color: #252b42;
+        margin: 0;
+    }
+
+    .student-card p {
+        font-size: 11px;
+        color: #777d91;
+        margin: 5px 0 0;
+    }
+
+    .student-card small {
+        font-size: 9px;
+        color: #9da1b0;
+    }
+
+    /* =========================
+       DEVELOPER
+    ========================= */
+
+    .developer-section {
+        background: white;
+        border-radius: 18px;
+        padding: 22px;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .developer-title {
+        margin-bottom: 18px;
+    }
+
+    .developer-title h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #252b42;
+        margin: 0 0 5px;
+    }
+
+    .developer-title p {
+        font-size: 10px;
+        color: #9da1b0;
+        margin: 0;
+    }
+
+    .developer-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .developer-card {
+        border: 1px solid #edf0f6;
         border-radius: 15px;
 
         padding: 18px;
 
-        min-height: 145px;
-    }
-
-    .class-card.blue {
-        background: linear-gradient(135deg, #3157d5, #5775df);
-    }
-
-    .class-card.purple {
-        background: linear-gradient(135deg, #7769c9, #9b90df);
-    }
-
-    .class-card.pink {
-        background: linear-gradient(135deg, #ed7186, #f49aac);
-    }
-
-    .class-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .class-top span {
-        background: rgba(255,255,255,.2);
-
-        padding: 5px 9px;
-
-        border-radius: 5px;
-
-        font-size: 9px;
-    }
-
-    .class-top button {
-        border: none;
-        background: transparent;
-        color: white;
-    }
-
-    .class-card h4 {
-        font-size: 15px;
-        margin-top: 17px;
-        margin-bottom: 4px;
-    }
-
-    .class-card p {
-        font-size: 9px;
-        opacity: .8;
-        margin: 0;
-    }
-
-    .class-bottom {
-        display: flex;
-        justify-content: space-between;
-
-        margin-top: 18px;
-
-        font-size: 9px;
-        opacity: .9;
-    }
-
-
-    /* =========================
-       CALENDAR
-    ========================= */
-
-    .calendar-card {
-        background: white;
-        border-radius: 18px;
-
-        padding: 18px;
-
-        margin-top: 20px;
-    }
-
-    .calendar-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .calendar-title h4 {
-        font-size: 12px;
-        margin: 0;
-    }
-
-    .calendar-title button {
-        border: none;
-        background: transparent;
-
-        font-size: 10px;
-        color: #777d91;
-    }
-
-    .calendar-days,
-    .calendar-date {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-
-        text-align: center;
-    }
-
-    .calendar-days {
-        margin-top: 18px;
-        margin-bottom: 8px;
-
-        color: #a2a6b5;
-        font-size: 8px;
-    }
-
-    .calendar-date {
-        gap: 5px;
-    }
-
-    .calendar-date span {
-        height: 25px;
-
         display: flex;
         align-items: center;
-        justify-content: center;
+        gap: 15px;
 
-        font-size: 8px;
+        background: #fafbff;
+    }
 
-        color: #62677a;
+    .developer-photo {
+        width: 65px;
+        height: 65px;
 
         border-radius: 50%;
+        object-fit: cover;
+
+        border: 4px solid #edf1ff;
+
+        flex-shrink: 0;
     }
 
-    .calendar-date .today {
-        background: #3157d5;
-        color: white;
+    .developer-info h4 {
+        font-size: 13px;
+        font-weight: 700;
+
+        color: #252b42;
+
+        margin: 0 0 4px;
     }
 
-
-    /* =========================
-       JADWAL
-    ========================= */
-
-    .lesson-table {
-        background: white;
-        border-radius: 14px;
-
-        overflow: hidden;
-    }
-
-    .table-head,
-    .lesson-row {
-        display: grid;
-
-        grid-template-columns:
-            1.6fr
-            1fr
-            1.2fr
-            1fr
-            .8fr;
-
-        align-items: center;
-    }
-
-    .table-head {
-        background: #fafbfe;
-
-        padding: 13px 15px;
-
-        font-size: 9px;
-        color: #999eaf;
+    .developer-role {
+        font-size: 10px;
+        color: #3157d5;
 
         font-weight: 600;
+
+        margin-bottom: 7px;
     }
 
-    .lesson-row {
-        padding: 13px 15px;
-
-        border-top: 1px solid #f0f1f5;
-
+    .developer-info p {
         font-size: 9px;
-
         color: #777d91;
+
+        margin: 0;
+
+        line-height: 1.5;
     }
-
-    .subject {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        color: #33394e;
-    }
-
-    .subject-icon {
-        width: 30px;
-        height: 30px;
-
-        border-radius: 8px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .blue-icon {
-        background: #e7edff;
-        color: #3157d5;
-    }
-
-    .purple-icon {
-        background: #eeeaff;
-        color: #7769c9;
-    }
-
-    .pink-icon {
-        background: #ffe9ed;
-        color: #ed7186;
-    }
-
-    .status {
-        padding: 5px 7px;
-
-        border-radius: 5px;
-
-        font-size: 8px;
-
-        text-align: center;
-    }
-
-    .done {
-        background: #e5f8ef;
-        color: #24a26a;
-    }
-
-    .ongoing {
-        background: #fff1d9;
-        color: #d98b00;
-    }
-
-    .upcoming {
-        background: #edf1ff;
-        color: #3157d5;
-    }
-
 
     /* =========================
-       REMINDER
+       WALI KELAS
     ========================= */
 
-    .reminder-card {
+    .teacher-card {
         background: white;
-
         border-radius: 18px;
 
-        padding: 18px;
+        width: 100%;
+        height: 100%;
 
-        margin-top: 20px;
+        padding: 25px 20px;
+
+        text-align: center;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
     }
 
-    .reminder-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .teacher-label {
+        display: inline-block;
+
+        background: #edf1ff;
+        color: #3157d5;
+
+        padding: 6px 12px;
+
+        border-radius: 20px;
+
+        font-size: 9px;
+        font-weight: 600;
 
         margin-bottom: 15px;
     }
 
-    .reminder-title h4 {
-        font-size: 12px;
-        margin: 0;
+    .teacher-photo {
+        width: 105px;
+        height: 105px;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        border: 5px solid #edf1ff;
+
+        margin-bottom: 12px;
     }
 
-    .reminder-title i {
-        color: #999;
-    }
+    .teacher-card h3 {
+        font-size: 16px;
+        font-weight: 700;
 
-    .reminder {
-        display: flex;
-        gap: 10px;
-
-        padding: 10px 0;
-
-        border-bottom: 1px solid #f0f1f5;
-    }
-
-    .reminder:last-child {
-        border-bottom: none;
-    }
-
-    .reminder-icon {
-        width: 28px;
-        height: 28px;
-
-        border-radius: 7px;
-
-        background: #edf1ff;
-        color: #3157d5;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        font-size: 12px;
-    }
-
-    .reminder strong {
-        display: block;
-
-        font-size: 9px;
+        color: #252b42;
 
         margin-bottom: 4px;
     }
 
-    .reminder small {
-        font-size: 8px;
-        color: #999eaf;
+    .teacher-role {
+        color: #3157d5;
+
+        font-size: 10px;
+        font-weight: 600;
+
+        margin-bottom: 22px;
     }
 
+    .teacher-info {
+        text-align: left;
+
+        border-top: 1px solid #eeeeee;
+
+        padding-top: 18px;
+    }
+
+    .teacher-info-item {
+        margin-bottom: 15px;
+    }
+
+    .teacher-info-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .teacher-info-item small {
+        display: block;
+
+        font-size: 8px;
+        color: #9da1b0;
+
+        margin-bottom: 4px;
+    }
+
+    .teacher-info-item p {
+        font-size: 10px;
+
+        color: #33394e;
+
+        font-weight: 500;
+
+        margin: 0;
+
+        line-height: 1.5;
+    }
+
+    .teacher-info-item i {
+        color: #3157d5;
+        margin-right: 5px;
+    }
 
     /* =========================
        RESPONSIVE
@@ -565,41 +421,27 @@
         }
 
         .right-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            display: block;
         }
 
-        .calendar-card,
-        .reminder-card {
-            margin-top: 0;
+        .teacher-card {
+            height: auto;
         }
-
     }
 
     @media (max-width: 800px) {
 
-        .class-grid {
+        .student-stats {
+            grid-template-columns: 1fr;
+        }
+
+        .developer-list {
             grid-template-columns: 1fr;
         }
 
         .welcome-image {
             display: none;
         }
-
-        .lesson-row {
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-
-        .table-head {
-            display: none;
-        }
-
-        .right-content {
-            grid-template-columns: 1fr;
-        }
-
     }
 
     @media (max-width: 600px) {
@@ -608,8 +450,10 @@
             padding: 20px 15px;
         }
 
+        .welcome-card {
+            padding: 25px;
+        }
     }
-
 </style>
 
 
@@ -617,13 +461,11 @@
 
     <div class="dashboard-grid">
 
-
         <!-- =================================================
              KOLOM KIRI
         ================================================== -->
 
         <div class="left-content">
-
 
             <!-- WELCOME -->
 
@@ -637,11 +479,12 @@
 
                     <p>
                         Selamat datang di halaman kelas.
-                        Yuk cek jadwal dan materi pembelajaranmu hari ini.
+                        Yuk cek informasi kelas dan data
+                        website kamu hari ini.
                     </p>
 
                     <a href="#" class="btn-jadwal">
-                        Lihat Jadwal
+                        Lihat Profil
                         <i class="bi bi-arrow-right"></i>
                     </a>
 
@@ -663,254 +506,172 @@
             </div>
 
 
-            <!-- KELAS -->
+            <!-- =========================
+                 DATA SISWA
+            ========================== -->
 
             <div class="section-header">
 
                 <div>
 
-                    <h3>Kelas Saya</h3>
+                    <h3>Data Siswa</h3>
 
                     <p>
-                        Daftar kelas yang sedang kamu ikuti
+                        Statistik siswa kelas XII RPL 1
                     </p>
 
                 </div>
-
-                <a href="#">
-                    Lihat Semua
-                    <i class="bi bi-arrow-right"></i>
-                </a>
 
             </div>
 
 
-            <div class="class-grid">
+            <div class="student-stats">
 
+                <!-- LAKI-LAKI -->
 
-                <div class="class-card blue">
+                <div class="student-card">
 
-                    <div class="class-top">
-
-                        <span>RPL</span>
-
-                        <button>
-                            <i class="bi bi-three-dots"></i>
-                        </button>
-
+                    <div class="student-icon">
+                        <i class="bi bi-person-fill"></i>
                     </div>
 
-                    <h4>XII RPL 1</h4>
+                    <h2>20</h2>
 
-                    <p>
-                        Rekayasa Perangkat Lunak
-                    </p>
+                    <p>Laki-laki</p>
 
-                    <div class="class-bottom">
-
-                        <span>
-                            <i class="bi bi-people-fill"></i>
-                            32 Siswa
-                        </span>
-
-                        <span>
-                            <i class="bi bi-book"></i>
-                            8 Mapel
-                        </span>
-
-                    </div>
+                    <small>Siswa</small>
 
                 </div>
 
 
-                <div class="class-card purple">
+                <!-- TOTAL -->
 
-                    <div class="class-top">
+                <div class="student-card">
 
-                        <span>WEB</span>
-
-                        <button>
-                            <i class="bi bi-three-dots"></i>
-                        </button>
-
+                    <div class="student-icon">
+                        <i class="bi bi-people-fill"></i>
                     </div>
 
-                    <h4>Pemrograman Web</h4>
+                    <h2>36</h2>
 
-                    <p>
-                        HTML, CSS & Laravel
-                    </p>
+                    <p>Total Siswa</p>
 
-                    <div class="class-bottom">
-
-                        <span>
-                            <i class="bi bi-people-fill"></i>
-                            32 Siswa
-                        </span>
-
-                        <span>
-                            <i class="bi bi-book"></i>
-                            12 Materi
-                        </span>
-
-                    </div>
+                    <small>XII RPL 1</small>
 
                 </div>
 
 
-                <div class="class-card pink">
+                <!-- PEREMPUAN -->
 
-                    <div class="class-top">
+                <div class="student-card">
 
-                        <span>DB</span>
-
-                        <button>
-                            <i class="bi bi-three-dots"></i>
-                        </button>
-
+                    <div class="student-icon">
+                        <i class="bi bi-person-fill"></i>
                     </div>
 
-                    <h4>Basis Data</h4>
+                    <h2>16</h2>
 
-                    <p>
-                        MySQL & Database
-                    </p>
+                    <p>Perempuan</p>
 
-                    <div class="class-bottom">
-
-                        <span>
-                            <i class="bi bi-people-fill"></i>
-                            32 Siswa
-                        </span>
-
-                        <span>
-                            <i class="bi bi-book"></i>
-                            10 Materi
-                        </span>
-
-                    </div>
+                    <small>Siswi</small>
 
                 </div>
-
 
             </div>
 
 
-            <!-- JADWAL -->
+            <!-- =========================
+                 DEVELOPER
+            ========================== -->
 
             <div class="section-header">
 
                 <div>
 
-                    <h3>Jadwal Pelajaran</h3>
+                    <h3>Data Developer Web</h3>
 
                     <p>
-                        Jadwal pembelajaran hari ini
+                        Informasi pengembang website
                     </p>
 
                 </div>
 
-                <a href="#">
-                    Lihat Semua
-                </a>
-
             </div>
 
 
-            <div class="lesson-table">
+            <div class="developer-section">
 
+                <div class="developer-title">
 
-                <div class="table-head">
+                    <h3>Developer Website</h3>
 
-                    <span>Mapel</span>
-                    <span>Guru</span>
-                    <span>Jam</span>
-                    <span>Ruangan</span>
-                    <span>Status</span>
+                    <p>
+                        Website ini dikembangkan oleh 2 orang developer.
+                    </p>
 
                 </div>
 
 
-                <div class="lesson-row">
+                <div class="developer-list">
 
-                    <div class="subject">
+                    <!-- DEVELOPER 1 -->
 
-                        <div class="subject-icon blue-icon">
-                            <i class="bi bi-code-slash"></i>
+                    <div class="developer-card">
+
+                        <img
+                            src=""
+                            alt="Developer 1"
+                            class="developer-photo"
+                        >
+
+                        <div class="developer-info">
+
+                            <h4>Eka Defiyanti</h4>
+
+                            <div class="developer-role">
+                                Frontend & UI/UX Developer
+                            </div>
+
+                            <p>
+                                Bertanggung jawab dalam pembuatan
+                                tampilan antarmuka dan pengembangan
+                                bagian frontend website.
+                            </p>
+
                         </div>
-
-                        <strong>
-                            Pemrograman Web
-                        </strong>
 
                     </div>
 
-                    <span>Pak Budi</span>
 
-                    <span>07.00 - 08.30</span>
+                    <!-- DEVELOPER 2 -->
 
-                    <span>Lab RPL 1</span>
+                    <div class="developer-card">
 
-                    <span class="status done">
-                        Selesai
-                    </span>
+                        <img
+                            src=""
+                            alt="Developer 2"
+                            class="developer-photo"
+                        >
 
-                </div>
+                        <div class="developer-info">
 
+                            <h4>Nama Developer 2</h4>
 
-                <div class="lesson-row">
+                            <div class="developer-role">
+                                Backend Developer
+                            </div>
 
-                    <div class="subject">
+                            <p>
+                                Bertanggung jawab dalam pengembangan
+                                sistem backend, database, serta
+                                integrasi fitur website.
+                            </p>
 
-                        <div class="subject-icon purple-icon">
-                            <i class="bi bi-database"></i>
                         </div>
-
-                        <strong>
-                            Basis Data
-                        </strong>
 
                     </div>
 
-                    <span>Bu Sinta</span>
-
-                    <span>08.30 - 10.00</span>
-
-                    <span>Lab RPL 2</span>
-
-                    <span class="status ongoing">
-                        Berlangsung
-                    </span>
-
                 </div>
-
-
-                <div class="lesson-row">
-
-                    <div class="subject">
-
-                        <div class="subject-icon pink-icon">
-                            <i class="bi bi-palette"></i>
-                        </div>
-
-                        <strong>
-                            UI / UX
-                        </strong>
-
-                    </div>
-
-                    <span>Bu Rina</span>
-
-                    <span>10.15 - 11.45</span>
-
-                    <span>Lab RPL 1</span>
-
-                    <span class="status upcoming">
-                        Akan Datang
-                    </span>
-
-                </div>
-
 
             </div>
 
@@ -918,190 +679,129 @@
 
 
         <!-- =================================================
-             KOLOM KANAN
+             KOLOM KANAN - WALI KELAS
         ================================================== -->
 
         <div class="right-content">
 
+            <div class="teacher-card">
 
-            <!-- PROFILE -->
+                <span class="teacher-label">
+                    WALI KELAS
+                </span>
 
-            <div class="profile-card">
 
-                <img src="https://i.pravatar.cc/150?img=47">
+                <img
+                    src=""
+                    alt="Foto Guru"
+                    class="teacher-photo"
+                >
 
-                <h4>Eka Defiyanti</h4>
 
-                <p>XII RPL 1</p>
+                <h3>
+                    Budi Santoso, S.Kom.
+                </h3>
 
-                <button>
-                    Lihat Profil
-                </button>
+
+                <div class="teacher-role">
+                    Guru & Wali Kelas XII RPL 1
+                </div>
+
+
+                <div class="teacher-info">
+
+                    <div class="teacher-info-item">
+
+                        <small>
+                            <i class="bi bi-person-badge"></i>
+                            NIP
+                        </small>
+
+                        <p>
+                            198705152010011001
+                        </p>
+
+                    </div>
+
+
+                    <div class="teacher-info-item">
+
+                        <small>
+                            <i class="bi bi-calendar3"></i>
+                            Tanggal Lahir
+                        </small>
+
+                        <p>
+                            Probolinggo, 15 Mei 1987
+                        </p>
+
+                    </div>
+
+
+                    <div class="teacher-info-item">
+
+                        <small>
+                            <i class="bi bi-geo-alt"></i>
+                            Alamat
+                        </small>
+
+                        <p>
+                            Jl. Diponegoro No. 25,
+                            Kraksaan, Probolinggo
+                        </p>
+
+                    </div>
+
+
+                    <div class="teacher-info-item">
+
+                        <small>
+                            <i class="bi bi-book"></i>
+                            Mata Pelajaran
+                        </small>
+
+                        <p>
+                            Pemrograman Web
+                        </p>
+
+                    </div>
+
+
+                    <div class="teacher-info-item">
+
+                        <small>
+                            <i class="bi bi-envelope"></i>
+                            Email
+                        </small>
+
+                        <p>
+                            budisantoso@sekolah.sch.id
+                        </p>
+
+                    </div>
+
+
+                    <div class="teacher-info-item">
+
+                        <small>
+                            <i class="bi bi-telephone"></i>
+                            No. Telepon
+                        </small>
+
+                        <p>
+                            0812-3456-7890
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
-
-            <!-- CALENDAR -->
-
-            <div class="calendar-card">
-
-                <div class="calendar-title">
-
-                    <h4>
-                        September 2026
-                    </h4>
-
-                    <div>
-
-                        <button>
-                            <i class="bi bi-chevron-left"></i>
-                        </button>
-
-                        <button>
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="calendar-days">
-
-                    <span>Min</span>
-                    <span>Sen</span>
-                    <span>Sel</span>
-                    <span>Rab</span>
-                    <span>Kam</span>
-                    <span>Jum</span>
-                    <span>Sab</span>
-
-                </div>
-
-
-                <div class="calendar-date">
-
-                    <span></span>
-                    <span></span>
-
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
-                    <span>11</span>
-                    <span>12</span>
-
-                    <span>13</span>
-                    <span>14</span>
-                    <span>15</span>
-
-                    <span class="today">16</span>
-
-                    <span>17</span>
-                    <span>18</span>
-                    <span>19</span>
-
-                    <span>20</span>
-                    <span>21</span>
-                    <span>22</span>
-                    <span>23</span>
-                    <span>24</span>
-                    <span>25</span>
-                    <span>26</span>
-
-                    <span>27</span>
-                    <span>28</span>
-                    <span>29</span>
-                    <span>30</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- REMINDER -->
-
-            <div class="reminder-card">
-
-                <div class="reminder-title">
-
-                    <h4>
-                        Pengingat
-                    </h4>
-
-                    <i class="bi bi-three-dots"></i>
-
-                </div>
-
-
-                <div class="reminder">
-
-                    <div class="reminder-icon">
-                        <i class="bi bi-bell"></i>
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Tugas Basis Data
-                        </strong>
-
-                        <small>
-                            Hari ini, 23:59
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="reminder">
-
-                    <div class="reminder-icon">
-                        <i class="bi bi-calendar-event"></i>
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Ujian Pemrograman
-                        </strong>
-
-                        <small>
-                            27 September 2026
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="reminder">
-
-                    <div class="reminder-icon">
-                        <i class="bi bi-file-earmark-text"></i>
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Kumpulkan Project
-                        </strong>
-
-                        <small>
-                            30 September 2026
-                        </small>
-                    </div>
-                </div>
-            </div>
         </div>
+
     </div>
+
 </div>
+
 @endsection
