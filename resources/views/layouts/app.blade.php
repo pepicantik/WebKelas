@@ -7,6 +7,7 @@
     <title>@yield('title', 'Techsoftone')</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
 </head>
 <style>
     nav.custom-nav {
@@ -70,6 +71,22 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     }
+
+    .btn-logout {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    color: #ffb4b4;
+    transform: translateY(-2px);
+}
 </style>
 <body>
 
@@ -81,7 +98,20 @@
                 <li><a href="/home">Beranda</a></li>
                 <li><a href="/moment">Moment</a></li>
                 <li><a href="/siswa">Data Siswa</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li>
+    <form action="{{ route('logout') }}"
+          method="GET"
+          id="logout-form">
+        @csrf
+
+        <button type="button"
+                id="btnLogout"
+                class="btn-logout">
+            Logout
+        </button>
+    </form>
+</li>
+                {{-- <li><a href="/logout" onclick="return confirm('Anda Yakin ingin logout')">Logout</a></li> --}}
             </ul>
         @else
             <a href="/login" class="login-btn">LOGIN</a>
@@ -98,5 +128,49 @@
             <p>&copy; 2026 | Techsoftone</p>
         </div>
     </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const tombol = document.getElementById('btnLogout');
+    const form = document.getElementById('logout-form');
+
+    if (tombol && form) {
+        tombol.addEventListener('click', function () {
+
+            Swal.fire({
+                title: 'Yakin ingin logout?',
+                text: 'Kamu akan keluar dari akun Techsoftone.',
+                icon: 'warning',
+
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Logout',
+                cancelButtonText: 'Batal',
+
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#64748b',
+
+                reverseButtons: true,
+                allowOutsideClick: false,
+
+                background: '#ffffff',
+                color: '#1e293b'
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+
+            });
+
+        });
+    }
+
+});
+</script>
+
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

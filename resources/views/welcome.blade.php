@@ -193,7 +193,6 @@
 
     .tentang-header h2 {
       margin: 60px 0 25px;
-
       color: #111;
       font-size: 32px;
       font-weight: 900;
@@ -268,11 +267,11 @@
 
     .siswa-container > h2 {
       margin: 50px 0;
-
       color: #111;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 900;
       line-height: 1.2;
+      text-align: center;
     }
 
     .siswa-grid {
