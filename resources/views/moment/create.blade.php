@@ -96,8 +96,20 @@
     <form action="{{route('moment.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 
+    <div class="row">
+
+        <div class="col-md-6">
+    <label class="custom-label">Nama Kegiatan</label>
+    <input class="form-control mb-3 mt-2 custom-input" type="text" name="judul" id="" required>
+        </div>
+
+        <div class="col-md-6">
     <label class="custom-label">Tanggal Dokumentasi</label>
     <input class="form-control mb-3 mt-2 custom-input" type="date" name="tanggal" id="" required>
+        </div>
+
+
+    </div>
 
     <label class="custom-label">Dokumentasi Moment Kelas</label>
     <input class="form-control mb-3 mt-2 custom-input" type="file" name="image" id="" required>

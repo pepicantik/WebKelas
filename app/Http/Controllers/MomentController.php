@@ -15,13 +15,19 @@ class MomentController extends Controller
         $moment = Moment::all();
         return view('welcome', compact('moment'));
     }
-    public function index()
+    public function index(Request $request)
     {
         if(!session()->has('key')){
             return redirect()->route('login');
         }
-        $moment = Moment::paginate(3);
-        return view('moment.index', compact('moment'));
+
+        $keyword = $request->input('search');
+
+    $moment = Moment::when($keyword, function ($query, $keyword) {
+        $query->where('judul', 'like', '%' . $keyword . '%');
+    })->paginate(5);
+
+    return view('moment.index', compact('moment'));
     }
 
     /**

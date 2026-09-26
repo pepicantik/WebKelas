@@ -2,6 +2,8 @@
 @section('title', 'Techsoftone')
 @section('konten')
 
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 <style>
     .card-body{
         padding: 40px;
@@ -218,7 +220,12 @@
                         <td style="vertical-align: middle">{{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</td>
                         <td style="white-space: nowrap; vertical-align:middle;">
                             <div class="d-flex gap-2 flex-nowrap justify-content-center">
-                                <a href="{{ route('siswa.show', $s->id) }}" class="btn btn-aksi-detail">Detail</a>
+                                <button type="button"
+                                class="btn btn-aksi-detail"
+                                data-bs-toggle="modal"
+                                data-bs-target="#detailSiswa{{ $s->id }}">
+                                Detail
+                            </button>
                             <a href="{{ route('siswa.edit', $s->id) }}" class="btn btn-aksi-edit">Edit</a>
                             <form action="{{ route('siswa.destroy', $s->id) }}" method="post">
                                 @csrf
@@ -229,6 +236,30 @@
                             </div>
                         </td>
                     </tr>
+
+    <div class="modal fade" id="modalSiswa{{ $s->id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+                <div class="modal-body">
+                    <div class="d-flex gap-5 align-items-start mb-3">
+                        <img src="{{ url('storage/'. $s->image) }}" alt="" height="300px">
+                        <div>
+                            <h2 class="mb-4">{{ $s->nama_lengkap }}</h2>
+                            <p class="mb-4"><strong>Tempat, Tanggal Lahir :</strong> {{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</p>
+                            <hr class="modal-short-line">
+                            <p class="mb-4"><strong>Hobi :</strong> {{ $s->hobi }}</p>
+                            <hr class="modal-short-line">
+                            <p class="mb-4"><strong>Sosmed :</strong> {{ $s->sosmed }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                 @empty
                     <tr class="text-center">
                         <td colspan="5">Tidak ada data siswa</td>

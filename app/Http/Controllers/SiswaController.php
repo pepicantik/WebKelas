@@ -31,7 +31,7 @@ class SiswaController extends Controller
 
     $siswa = Siswa::when($keyword, function ($query, $keyword) {
         $query->where('nama_lengkap', 'like', '%' . $keyword . '%');
-    })->paginate(10);
+    })->paginate(5);
 
     return view('siswa.index', compact('siswa'));
     }

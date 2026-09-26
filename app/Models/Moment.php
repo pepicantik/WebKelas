@@ -8,6 +8,7 @@ class Moment extends Model
 {
     protected $fillable = [
         'image',
+        'judul',
         'tanggal'
     ];
 }

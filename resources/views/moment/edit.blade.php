@@ -96,6 +96,9 @@
     @csrf
     @method('PUT')
 
+    <label class="custom-label">Nama Kegiatan</label>
+    <input class="form-control mb-3 mt-2 custom-input" type="text" name="judul" id="" required value="{{ $moment->judul }}">
+
     <label>Tanggal Dokumentasi</label>
     <input class="form-control mb-3 mt-2 custom-input" type="date" name="tanggal" id="" required value="{{ $moment->tanggal }}">
 
