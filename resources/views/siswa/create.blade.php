@@ -112,20 +112,33 @@
         <label for="" class="mb-1">Nama Lengkap</label>
         <input type="text" name="nama_lengkap" class="form-control mb-3 custom-input" placeholder="Masukkan Nama Lengkap Siswa" required>
 
-        <label for="" class="mb-1">Tanggal Lahir</label>
-        <input type="date" name="tgl_lahir" class="form-control mb-3 custom-input" required>
-
-        <label for="" class="mb-1">Tempat Lahir</label>
-        <input type="text" name="tempat_lahir" class="form-control mb-3 custom-input" placeholder="Masukkan Tempat Lahir Siswa" required>
-
-        <label for="" class="mb-1">Hobi</label>
-        <input type="text" name="hobi" class="form-control mb-3 custom-input" placeholder="Masukkan Hobi Siswa" required>
-
-        <label for="" class="mb-1">Sosmed</label>
-        <input type="text" name="sosmed" class="form-control mb-3 custom-input" placeholder="Masukkan Sosmed Siswa" required>
-
         <label for="" class="mb-1">Gambar</label>
         <input type="file" name="image" class="form-control mb-3 custom-input" required>
+
+        <div class="row">
+
+            <div class="col-md-6">
+        <label for="" class="mb-1">Tempat Lahir</label>
+        <input type="text" name="tempat_lahir" class="form-control mb-3 custom-input" placeholder="Masukkan Tempat Lahir Siswa" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="" class="mb-1">Tanggal Lahir</label>
+                <input type="date" name="tgl_lahir" class="form-control mb-3 custom-input" required>
+            </div>
+
+            <div class="col-md-6">
+        <label for="" class="mb-1">Hobi</label>
+        <input type="text" name="hobi" class="form-control mb-3 custom-input" placeholder="Masukkan Hobi Siswa" required>
+            </div>
+
+            <div class="col-md-6">
+        <label for="" class="mb-1">Sosmed</label>
+        <input type="text" name="sosmed" class="form-control mb-3 custom-input" placeholder="Masukkan Sosmed Siswa" required>
+            </div>
+
+        </div>
+
 
         <button type="submit" class="btn btn-submit">Simpan</button>
         <a href="{{ route('siswa.index') }}" class="btn btn-back">Kembali</a>

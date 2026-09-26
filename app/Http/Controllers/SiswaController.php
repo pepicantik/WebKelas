@@ -21,15 +21,21 @@ class SiswaController extends Controller
         $siswa = Siswa::all();
         return view('home', compact('siswa'));
     }
-    public function index()
+    public function index(Request $request)
     {
         if (!session()->has('key')) {
             return redirect()->route('login')->with('error', 'Silahkan login terlebih dahulu');
         }
 
-        $siswa = Siswa::paginate(2);
-        return view('siswa.index', compact('siswa'));
+    $keyword = $request->input('search');
+
+    $siswa = Siswa::when($keyword, function ($query, $keyword) {
+        $query->where('nama_lengkap', 'like', '%' . $keyword . '%');
+    })->paginate(10);
+
+    return view('siswa.index', compact('siswa'));
     }
+
 
     /**
      * Show the form for creating a new resource.

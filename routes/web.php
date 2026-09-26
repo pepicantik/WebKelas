@@ -7,6 +7,7 @@ use App\Http\Controllers\MomentController;
 
 Route::get('/', [SiswaController::class, 'welcome']);
 Route::get('/home', [SiswaController::class, 'home']);
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
 
 Route::resource('siswa', SiswaController::class);
 Route::resource('moment', MomentController::class);

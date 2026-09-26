@@ -97,6 +97,16 @@
         width: 100%;
         min-height: 100vh;
     }
+    .file-sebelumnya {
+    display: inline-block;
+    background-color: #eef2ff;
+    color: #3159d8;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
 </style>
 
 <div class="container custom-container table-responsive">
@@ -112,21 +122,36 @@
         <label for="" class="mb-1">Nama Lengkap</label>
         <input type="text" name="nama_lengkap" class="form-control mb-3 custom-input" value="{{ $siswa->nama_lengkap }}" placeholder="Masukkan Nama Lengkap Siswa" required>
 
-        <label for="" class="mb-1">Tanggal Lahir</label>
-        <input type="date" name="tgl_lahir" class="form-control mb-3 custom-input" value="{{ $siswa->tgl_lahir }}" required>
-
-        <label for="" class="mb-1">Tempat Lahir</label>
-        <input type="text" name="tempat_lahir" class="form-control mb-3 custom-input" value="{{ $siswa->tempat_lahir }}" placeholder="Masukkan Tempat Lahir Siswa" required>
-
-        <label for="" class="mb-1">Hobi</label>
-        <input type="text" name="hobi" class="form-control mb-3 custom-input" value="{{ $siswa->hobi }}" placeholder="Masukkan Hobi Siswa" required>
-
-        <label for="" class="mb-1">Sosmed</label>
-        <input type="text" name="sosmed" class="form-control mb-3 custom-input" value="{{ $siswa->sosmed }}" placeholder="Masukkan Sosmed Siswa" required>
-
         <label for="" class="mb-1">Gambar</label>
         <input type="file" name="image" class="form-control mb-3 custom-input" >
-        <p>file sebelumnya : <strong>{{ $siswa->image }}</strong></p>
+        <div class="file-sebelumnya">
+            <p>file sebelumnya : <strong>{{ $siswa->image }}</strong></p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label for="" class="mb-1">Tanggal Lahir</label>
+                <input type="date" name="tgl_lahir" class="form-control mb-3 custom-input" value="{{ $siswa->tgl_lahir }}" required>
+            </div>
+
+            <div class="col-md-6">
+        <label for="" class="mb-1">Tempat Lahir</label>
+        <input type="text" name="tempat_lahir" class="form-control mb-3 custom-input" value="{{ $siswa->tempat_lahir }}" placeholder="Masukkan Tempat Lahir Siswa" required>
+            </div>
+
+            <div class="col-md-6">
+        <label for="" class="mb-1">Hobi</label>
+        <input type="text" name="hobi" class="form-control mb-3 custom-input" value="{{ $siswa->hobi }}" placeholder="Masukkan Hobi Siswa" required>
+            </div>
+
+            <div class="col-md-6">
+        <label for="" class="mb-1">Sosmed</label>
+        <input type="text" name="sosmed" class="form-control mb-3 custom-input" value="{{ $siswa->sosmed }}" placeholder="Masukkan Sosmed Siswa" required>
+            </div>
+
+        </div>
+
 
         <button type="submit" class="btn btn-submit">Simpan</button>
         <a href="{{ route('siswa.index') }}" class="btn btn-back">Kembali</a>

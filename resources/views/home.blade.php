@@ -42,7 +42,7 @@
         border-radius: 18px;
         padding: 30px;
         min-height: 190px;
-
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -151,14 +151,14 @@
     }
 
     .section-header h3 {
-        font-size: 17px;
+        font-size: 20px;
         margin: 0;
         font-weight: 700;
         color: #252b42;
     }
 
     .section-header p {
-        font-size: 10px;
+        font-size: 15px;
         color: #999eaf;
         margin: 5px 0 0;
     }
@@ -206,13 +206,13 @@
     }
 
     .student-card p {
-        font-size: 11px;
+        font-size: 13px;
         color: #777d91;
         margin: 5px 0 0;
     }
 
     .student-card small {
-        font-size: 9px;
+        font-size: 12px;
         color: #9da1b0;
     }
 
@@ -265,8 +265,8 @@
     }
 
     .developer-photo {
-        width: 65px;
-        height: 65px;
+        width: 100px;
+        height: 100px;
 
         border-radius: 50%;
         object-fit: cover;
@@ -276,8 +276,8 @@
         flex-shrink: 0;
     }
 
-    .developer-info h4 {
-        font-size: 13px;
+    .developer-info h3 {
+        font-size: 15px;
         font-weight: 700;
 
         color: #252b42;
@@ -286,7 +286,7 @@
     }
 
     .developer-role {
-        font-size: 10px;
+        font-size: 11px;
         color: #3157d5;
 
         font-weight: 600;
@@ -295,7 +295,7 @@
     }
 
     .developer-info p {
-        font-size: 9px;
+        font-size: 12px;
         color: #777d91;
 
         margin: 0;
@@ -387,14 +387,14 @@
     .teacher-info-item small {
         display: block;
 
-        font-size: 8px;
+        font-size: 15px;
         color: #9da1b0;
 
         margin-bottom: 4px;
     }
 
     .teacher-info-item p {
-        font-size: 10px;
+        font-size: 13px;
 
         color: #33394e;
 
@@ -409,6 +409,28 @@
         color: #3157d5;
         margin-right: 5px;
     }
+    .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.wali-kelas {
+    background: #eef2ff;
+    color: #3159d8;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-header img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
     /* =========================
        RESPONSIVE
@@ -473,20 +495,15 @@
 
                 <div class="welcome-text">
 
-                    <small>SELAMAT DATANG 👋</small>
+                    <small>SELAMAT DATANG </small>
 
-                    <h1>Halo, Eka!</h1>
+                    <h1>Halo, Admin!</h1>
 
                     <p>
                         Selamat datang di halaman kelas.
                         Yuk cek informasi kelas dan data
                         website kamu hari ini.
                     </p>
-
-                    <a href="#" class="btn-jadwal">
-                        Lihat Profil
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
 
                 </div>
 
@@ -619,14 +636,14 @@
                     <div class="developer-card">
 
                         <img
-                            src=""
+                            src="{{ asset('image/pepi.jpeg') }}"
                             alt="Developer 1"
                             class="developer-photo"
                         >
 
                         <div class="developer-info">
 
-                            <h4>Eka Defiyanti</h4>
+                            <h3>Eka Defiyanti</h3>
 
                             <div class="developer-role">
                                 Frontend & UI/UX Developer
@@ -648,14 +665,14 @@
                     <div class="developer-card">
 
                         <img
-                            src=""
+                            src="{{ asset('image/pepi.jpeg') }}"
                             alt="Developer 2"
                             class="developer-photo"
                         >
 
                         <div class="developer-info">
 
-                            <h4>Nama Developer 2</h4>
+                            <h3>Verra Dwi Adelya Oktavia</h3>
 
                             <div class="developer-role">
                                 Backend Developer
@@ -686,17 +703,12 @@
 
             <div class="teacher-card">
 
-                <span class="teacher-label">
-                    WALI KELAS
-                </span>
+                <div class="profile-header">
 
+                    <img src="{{ asset('image/juhon.jpg') }}"alt="Foto Guru" class="teacher-photo">
 
-                <img
-                    src=""
-                    alt="Foto Guru"
-                    class="teacher-photo"
-                >
-
+                    <span class="teacher-label">WALI KELAS</span>
+                </div>
 
                 <h3>
                     Budi Santoso, S.Kom.
