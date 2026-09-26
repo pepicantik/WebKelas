@@ -697,6 +697,22 @@
             font-weight: 700;
             transition: 0.3s;
         }
+
+        .btn-logout {
+        background: transparent;
+        color: white;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 10px 15px;
+        transition: 0.3s;
+    }
+
+    .btn-logout:hover {
+        color: #ffb4b4;
+        transform: translateY(-2px);
+    }
     </style>
 </head>
 
@@ -713,10 +729,15 @@
             </ul>
 
             @if (session()->has('key'))
-                <div>
-                    <a href="/home" class="login-btn">ADMIN</a>
-                    <a href="/logout" class="login-btn">LOGOUT</a>
-                </div>
+                <ul class="nav-links">
+                    <li><a href="/home" class="login-btn">ADMIN</a></li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="GET" id="logout-form">
+                            @csrf
+                            <button type="button" id="btnLogout" class="btn-logout">Logout</button>
+                        </form>
+                    </li>
+                </ul>
             @else
                 <a href="/login" class="login-btn">LOGIN</a>
             @endif
@@ -905,6 +926,50 @@
             foto[indexFoto].classList.add('active');
         }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const tombol = document.getElementById('btnLogout');
+            const form = document.getElementById('logout-form');
+
+            if (tombol && form) {
+                tombol.addEventListener('click', function() {
+
+                    Swal.fire({
+                        title: 'Yakin ingin logout?',
+                        text: 'Kamu akan keluar dari akun Techsoftone.',
+                        icon: 'warning',
+
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, Logout',
+                        cancelButtonText: 'Batal',
+
+                        confirmButtonColor: '#dc3545',
+                        cancelButtonColor: '#64748b',
+
+                        reverseButtons: true,
+                        allowOutsideClick: false,
+
+                        background: '#ffffff',
+                        color: '#1e293b'
+                    }).then((result) => {
+
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+
+                    });
+
+                });
+            }
+
+        });
+    </script>
+
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 </body>
 
