@@ -213,7 +213,6 @@
                     <th>No</th>
                     <th>Dokumentasi Moment</th>
                     <th>Kegiatan</th>
-                    <th>Tanggal</th>
                     <th>Aksi</th>
                 </tr>
 
