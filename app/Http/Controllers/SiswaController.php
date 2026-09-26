@@ -11,29 +11,31 @@ class SiswaController extends Controller
      * Display a listing of the resource.
      */
 
-     public function welcome()
+    public function welcome()
     {
-        $siswa = Siswa::all();
+        $siswa = Siswa::orderBy('nama_lengkap', 'asc')->get();
         return view('welcome', compact('siswa'));
     }
-     public function home()
+
+    public function home()
     {
         $siswa = Siswa::all();
         return view('home', compact('siswa'));
     }
+
     public function index(Request $request)
     {
         if (!session()->has('key')) {
             return redirect()->route('login')->with('error', 'Silahkan login terlebih dahulu');
         }
 
-    $keyword = $request->input('search');
+        $keyword = $request->input('search');
 
-    $siswa = Siswa::when($keyword, function ($query, $keyword) {
-        $query->where('nama_lengkap', 'like', '%' . $keyword . '%');
-    })->paginate(5);
+        $siswa = Siswa::when($keyword, function ($query, $keyword) {
+            $query->where('nama_lengkap', 'like', '%' . $keyword . '%');
+        })->orderBy('id', 'desc')->paginate(5);
 
-    return view('siswa.index', compact('siswa'));
+        return view('siswa.index', compact('siswa'));
     }
 
 
