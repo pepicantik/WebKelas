@@ -10,11 +10,7 @@ class MomentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function welcome()
-    {
-        $moment = Moment::all();
-        return view('welcome', compact('moment'));
-    }
+
     public function index(Request $request)
     {
         if(!session()->has('key')){

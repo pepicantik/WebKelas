@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Moment;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class SiswaController extends Controller
     public function welcome()
     {
         $siswa = Siswa::orderBy('nama_lengkap', 'asc')->get();
-        return view('welcome', compact('siswa'));
+        $moment = Moment::latest()->get();
+        return view('welcome', compact('siswa', 'moment'));
     }
 
     public function home()

@@ -505,53 +505,60 @@
             margin: 0 0 16px 0;
         }
 
-        .slider {
-            position: relative;
-            max-width: 900px;
-            margin: auto;
-            overflow: hidden;
-            border-radius: 12px;
-        }
 
-        .slider img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .moment h2 {
-            margin: 50px 0;
-            color: #111;
-            font-size: 32px;
-            font-weight: 900;
-            padding-top: 80px;
-            line-height: 1.2;
+        .moment {
+            padding: 60px 6%;
             text-align: center;
         }
 
-        /* Tombol panah di dalam foto */
+        .moment h2 {
+            color: #2545d8;
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .moment-subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 900px;
+            height: 450px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #eaf0ff;
+        }
+
+        .foto-moment {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .foto-moment.active {
+            display: block;
+        }
+
         .arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            z-index: 2;
+
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
 
             background: rgba(0, 0, 0, 0.45);
             color: white;
-
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-
-            cursor: pointer;
             font-size: 22px;
-            z-index: 2;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
+            cursor: pointer;
             transition: 0.3s;
         }
 
@@ -567,14 +574,26 @@
             right: 15px;
         }
 
+        .moment-empty {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+
         @media (max-width: 768px) {
-            .slider img {
+            .slider {
                 height: 250px;
             }
 
+            .moment h2 {
+                font-size: 23px;
+            }
+
             .arrow {
-                width: 35px;
-                height: 35px;
+                width: 36px;
+                height: 36px;
                 font-size: 18px;
             }
         }
@@ -663,13 +682,15 @@
                 padding: 35px 6% 0;
             }
         }
-        .nav-links-nav{
+
+        .nav-links-nav {
             display: flex;
             gap: 45px;
             list-style: none;
             margin-bottom: 0;
         }
-        .nav-links-nav a{
+
+        .nav-links-nav a {
             color: white;
             text-decoration: none;
             font-size: 13px;
@@ -798,15 +819,26 @@
     </div>
 
 
-    <section class="moment" id="momen">
+
+    <section class="moment">
         <h2>MOMENTS WITH XII RPL 1</h2>
 
+        <p class="moment-subtitle">Kenangan, cerita, dan kebersamaan kita.</p>
+
         <div class="slider">
-            <button class="arrow left" onclick="geserFoto(-1)">&#10094;</button>
 
-            <img id="fotoMoment" src="images/fotokelas.jpeg" alt="Moment XII RPL 1">
+            @forelse ($moment as $m)
+                <img src="{{ asset('storage/' . $m->image) }}" class="foto-moment {{ $loop->first ? 'active' : '' }}"
+                    alt="{{ $m->judul ?? 'Moment XII RPL 1' }}">
+            @empty
+                <div class="moment-empty">Belum ada foto Moment yang diupload.</div>
+            @endforelse
 
-            <button class="arrow right" onclick="geserFoto(1)">&#10095;</button>
+            @if ($moment->count() > 1)
+                <button class="arrow left" type="button" onclick="geserFoto(-1)">&#10094;</button>
+                <button class="arrow right" type="button" onclick="geserFoto(1)">&#10095;</button>
+            @endif
+
         </div>
     </section>
 
@@ -846,18 +878,20 @@
                 All Rights Reserved.
             </p>
         </div>
-    </footer> 
+    </footer>
 
     <script>
-        const foto = [
-            "images/fotokelas.jpeg",
-            "image/juhon.jpg",
-            "image/pepi.jpeg"
-        ];
-
         let indexFoto = 0;
 
         function geserFoto(arah) {
+            const foto = document.querySelectorAll('.foto-moment');
+
+            if (foto.length === 0) {
+                return;
+            }
+
+            foto[indexFoto].classList.remove('active');
+
             indexFoto += arah;
 
             if (indexFoto >= foto.length) {
@@ -868,8 +902,7 @@
                 indexFoto = foto.length - 1;
             }
 
-            document.getElementById("fotoMoment").src =
-                foto[indexFoto];
+            foto[indexFoto].classList.add('active');
         }
     </script>
 
