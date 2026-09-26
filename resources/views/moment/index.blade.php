@@ -14,7 +14,7 @@
         border-radius: 15px;
         box-shadow: 0 10px 20px 10px rgb(0, 0, 0, 0.05);
         overflow: hidden;
-        margin-top: 20px;
+        margin-top: 50px;
         margin-bottom: 20px;
         width: 100%;
     }
@@ -213,7 +213,6 @@
                     <th>No</th>
                     <th>Dokumentasi Moment</th>
                     <th>Kegiatan</th>
-                    <th>Tanggal</th>
                     <th>Aksi</th>
                 </tr>
 

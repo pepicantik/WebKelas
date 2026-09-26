@@ -100,7 +100,7 @@
 
         <div class="col-md-6">
     <label class="custom-label">Nama Kegiatan</label>
-    <input class="form-control mb-3 mt-2 custom-input" type="text" name="judul" id="" required>
+    <input class="form-control mb-3 mt-2 custom-input" type="text" name="judul" id="" required placeholder="Masukkan Judul Kegiatan">
         </div>
 
         <div class="col-md-6">
