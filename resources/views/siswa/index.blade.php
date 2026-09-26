@@ -237,7 +237,7 @@
                         </td>
                     </tr>
 
-    <div class="modal fade" id="modalSiswa{{ $s->id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="detailSiswa{{ $s->id }}" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">

@@ -7,7 +7,7 @@
     <title>@yield('title', 'Techsoftone')</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
 </head>
 <style>
     nav.custom-nav {
@@ -52,7 +52,8 @@
     }
 
     .nav-links a:hover {
-      opacity: 0.7;
+      color: #FFD444;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     }
 
     .login-btn {
