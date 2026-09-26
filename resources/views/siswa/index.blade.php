@@ -172,6 +172,10 @@
     color: white;
     font-weight: 600;
 }
+.foto-siswa{
+    object-fit: cover;
+    border-radius: 15px;
+}
 </style>
 
 <div class="container custom-container table-responsive">
@@ -246,7 +250,7 @@
 
                 <div class="modal-body">
                     <div class="d-flex gap-5 align-items-start mb-3">
-                        <img src="{{ url('storage/'. $s->image) }}" alt="" height="300px">
+                        <img class="foto-siswa" src="{{ url('storage/'. $s->image) }}" alt="" height="300px">
                         <div>
                             <h2 class="mb-4">{{ $s->nama_lengkap }}</h2>
                             <p class="mb-4"><strong>Tempat, Tanggal Lahir :</strong> {{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</p>

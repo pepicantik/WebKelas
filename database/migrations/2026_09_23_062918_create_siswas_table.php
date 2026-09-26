@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('hobi');
             $table->string('image');
             $table->string('sosmed');
+            $table->string('motivasi');
             $table->timestamps();
         });
     }

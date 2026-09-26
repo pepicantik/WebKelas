@@ -12,6 +12,7 @@ class Siswa extends Model
         'tempat_lahir',
         'hobi',
         'image',
+        'motivasi',
         'sosmed'
     ];
 }

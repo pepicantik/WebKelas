@@ -525,6 +525,7 @@
             color: #111;
             font-size: 32px;
             font-weight: 900;
+            padding-top: 80px;
             line-height: 1.2;
             text-align: center;
         }
@@ -662,6 +663,19 @@
                 padding: 35px 6% 0;
             }
         }
+        .nav-links-nav{
+            display: flex;
+            gap: 45px;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        .nav-links-nav a{
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
     </style>
 </head>
 
@@ -671,7 +685,7 @@
         <nav>
             <div class="logo">Techsoftone</div>
 
-            <ul class="nav-links">
+            <ul class="nav-links-nav">
                 <li><a href="#siswa">STUDENTS</a></li>
                 <li><a href="#tentang">ABOUT US</a></li>
                 <li><a href="#momen">MOMENTS</a></li>

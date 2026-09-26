@@ -115,6 +115,9 @@
         <label for="" class="mb-1">Gambar</label>
         <input type="file" name="image" class="form-control mb-3 custom-input" required>
 
+        <label for="" class="mb-1">Motivasi</label>
+        <textarea name="motivasi" id="" cols="30" rows="" class="form-control mb-3" placeholder="Isi Motivasi Siswa.."></textarea>
+
         <div class="row">
 
             <div class="col-md-6">
