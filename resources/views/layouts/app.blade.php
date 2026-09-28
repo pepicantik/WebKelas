@@ -12,6 +12,10 @@
 </head>
 <style>
     nav.custom-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
         width: 100%;
         height: 70px;
         display: flex;
@@ -23,6 +27,7 @@
             rgba(42, 70, 220, 0.9) 50%,
             rgba(91, 128, 245, 0.85) 100%);
         box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
     }
 
     .logo {

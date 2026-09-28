@@ -260,6 +260,7 @@
         .siswa-container {
             width: 100%;
             padding: 10px 50px;
+            padding-top: 50px;
             scroll-margin-top: 20px;
         }
 
@@ -513,6 +514,7 @@
 
         .moment h2 {
             color: #2545d8;
+            padding-top: 50px;
             font-size: 30px;
             font-weight: 800;
             margin-bottom: 10px;
@@ -699,20 +701,107 @@
         }
 
         .btn-logout {
-        background: transparent;
-        color: white;
-        border: none;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        padding: 10px 15px;
-        transition: 0.3s;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 9px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .btn-logout:hover {
+            color: #ffb4b4;
+            transform: translateY(-2px);
+        }
+        .guru {
+    padding: 70px 8%;
+}
+
+.guru h2 {
+    text-align: center;
+    font-size: 35px;
+    color: #123b70;
+    margin-bottom: 45px;
+    font-weight: 700;
+}
+
+/* .guru-card {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+} */
+
+/* FOTO */
+.foto-guru {
+    flex: 1;
+    text-align: left;
+}
+
+.foto-guru img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* TEKS */
+.biodata-guru {
+    flex: 1.5;
+}
+
+.biodata-guru h3 {
+    color: #1557a6;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.biodata-guru p {
+    color: #444;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+
+    .guru-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
     }
 
-    .btn-logout:hover {
-        color: #ffb4b4;
-        transform: translateY(-2px);
+    .foto-guru img {
+        width: 220px;
+        height: 220px;
     }
+
+    .biodata-guru h3 {
+        font-size: 24px;
+    }
+
+    .info-guru {
+        text-align: left;
+    }
+}
+.guru-custom{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+}
     </style>
 </head>
 
@@ -720,7 +809,7 @@
     <section class="hero">
 
         <nav>
-            <div class="logo">Techsoftone</div>
+            <div class="logo" id="/">Techsoftone</div>
 
             <ul class="nav-links-nav">
                 <li><a href="#siswa">STUDENTS</a></li>
@@ -729,15 +818,13 @@
             </ul>
 
             @if (session()->has('key'))
-                <ul class="nav-links">
-                    <li><a href="/home" class="login-btn">ADMIN</a></li>
-                    <li>
-                        <form action="{{ route('logout') }}" method="GET" id="logout-form">
-                            @csrf
-                            <button type="button" id="btnLogout" class="btn-logout">Logout</button>
-                        </form>
-                    </li>
-                </ul>
+                <div class="d-flex gap-3">
+                    <a href="/home" class="login-btn">ADMIN</a>
+                    <form action="{{ route('logout') }}" method="GET" id="logout-form">
+                        @csrf
+                        <button type="button" id="btnLogout" class="btn-logout">Logout</button>
+                    </form>
+                </div>
             @else
                 <a href="/login" class="login-btn">LOGIN</a>
             @endif
@@ -789,6 +876,32 @@
         </div>
     </section>
 
+    <section id="guru" class="guru">
+    <h2>WALI KELAS XII RPL 1</h2>
+
+        <!-- FOTO GURU -->
+        <div class="guru-custom">
+
+            <div class="foto-guru">
+                <img src="{{ asset('image/pepi.jpeg') }}" alt="Wali Kelas XII RPL 1">
+            </div>
+            
+            <!-- BIODATA / TEKS -->
+            <div class="biodata-guru">
+                <h3>Wali Kelas XII RPL 1</h3>
+
+            <p>
+                Kami adalah keluarga besar XII RPL 1,
+                kelas industri Rekayasa Perangkat Lunak
+                yang kreatif, inovatif, dan penuh semangat.
+                Bersama-sama kami belajar, berkarya,
+                dan mengembangkan kemampuan di bidang teknologi
+                untuk meraih masa depan yang lebih baik.
+            </p>
+        </div>
+    </div>
+</section>
+
     <div class="siswa-container" id="siswa">
 
         <h2>STUDENTS XII RPL 1</h2>
@@ -829,6 +942,8 @@
                                         <p class="mb-4"><strong>Hobi :</strong> {{ $s->hobi }}</p>
                                         <hr class="modal-short-line">
                                         <p class="mb-4"><strong>Sosmed :</strong> {{ $s->sosmed }}</p>
+                                        <hr class="modal-short-line">
+                                        <p class="mb-4"><strong>Motivasi :</strong> {{ $s->motivasi }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -838,8 +953,6 @@
             @endforeach
         </div>
     </div>
-
-
 
     <section class="moment" id="momen">
         <h2>MOMENTS WITH XII RPL 1</h2>
@@ -880,8 +993,8 @@
             <div class="footer-links">
                 <h4>Navigasi</h4>
                 <a href="/home">Beranda</a>
-                <a href="/moment">Moment</a>
-                <a href="/siswa">Data Siswa</a>
+                <a href="#momen" id="momen">Moment</a>
+                <a href="#siswa" id="siswa">Data Siswa</a>
             </div>
 
             <!-- Kontak -->

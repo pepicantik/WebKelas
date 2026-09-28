@@ -101,7 +101,7 @@
         }
     </style>
 
-    <div class="container custom-container table-responsive">
+    <div class="container custom-container table-responsive" style="padding-top: 100px">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card custom-card">
