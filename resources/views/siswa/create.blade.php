@@ -147,7 +147,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="" class="mb-1">Sosmed</label>
+                                    <label for="" class="mb-1">Instagram</label>
                                     <input type="text" name="sosmed" class="form-control mb-3 custom-input" placeholder="Masukkan Sosmed Siswa" required>
                                 </div>
                             </div>

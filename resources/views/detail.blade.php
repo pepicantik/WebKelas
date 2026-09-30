@@ -58,11 +58,11 @@
         <img src="{{ url('storage/'. $siswa->image) }}" alt="" height="300px">
         <div>
             <h2 class="mb-4">{{ $siswa->nama_lengkap }}</h2>
-            <p class="mb-4"><strong>TTL :</strong> {{ $siswa->tempat_lahir }}, {{ $siswa->tgl_lahir }}</p>
+            <p class="mb-4"><strong>TTL :</strong> {{ $siswa->tempat_lahir }}, {{ \Carbon\Carbon::parse($siswa->tgl_lahir)->format('d-m-Y') }}</p>
             <hr class="short-line">
             <p class="mb-4"><strong>Hobi :</strong> {{ $siswa->hobi }}</p>
             <hr class="short-line">
-            <p class="mb-4"><strong>Sosmed :</strong> {{ $siswa->sosmed }}</p>
+            <p class="mb-4"><strong>Sosmed :</strong>{{ $siswa->sosmed }}</p>
         </div>
     </div>
     @if (session()->has('key'))

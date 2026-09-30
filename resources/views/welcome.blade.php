@@ -265,11 +265,17 @@
         }
 
         .siswa-container>h2 {
-            margin: 50px 0;
+            margin: 50px 0 10px 0;
             color: #111;
             font-size: 32px;
             font-weight: 900;
             line-height: 1.2;
+            text-align: center;
+        }
+
+        .siswa-subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
             text-align: center;
         }
 
@@ -513,7 +519,6 @@
         }
 
         .moment h2 {
-            color: #2545d8;
             padding-top: 50px;
             font-size: 30px;
             font-weight: 800;
@@ -716,19 +721,20 @@
             color: #ffb4b4;
             transform: translateY(-2px);
         }
+
         .guru {
-    padding: 70px 8%;
-}
+            padding: 70px 8%;
+        }
 
-.guru h2 {
-    text-align: center;
-    font-size: 35px;
-    color: #123b70;
-    margin-bottom: 45px;
-    font-weight: 700;
-}
+        .guru h2 {
+            text-align: center;
+            font-size: 35px;
+            color: #123b70;
+            margin-bottom: 45px;
+            font-weight: 700;
+        }
 
-/* .guru-card {
+        /* .guru-card {
     max-width: 1000px;
     margin: auto;
     display: flex;
@@ -740,68 +746,69 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 } */
 
-/* FOTO */
-.foto-guru {
-    flex: 1;
-    text-align: left;
-}
+        /* FOTO */
+        .foto-guru {
+            flex: 1;
+            text-align: left;
+        }
 
-.foto-guru img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
+        .foto-guru img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
 
-/* TEKS */
-.biodata-guru {
-    flex: 1.5;
-}
+        /* TEKS */
+        .biodata-guru {
+            flex: 1.5;
+        }
 
-.biodata-guru h3 {
-    color: #1557a6;
-    font-size: 28px;
-    margin-bottom: 18px;
-}
+        .biodata-guru h3 {
+            color: #1557a6;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
 
-.biodata-guru p {
-    color: #444;
-    line-height: 1.8;
-    font-size: 16px;
-}
+        .biodata-guru p {
+            color: #444;
+            line-height: 1.8;
+            font-size: 16px;
+        }
 
 
-/* RESPONSIVE HP */
-@media (max-width: 768px) {
+        /* RESPONSIVE HP */
+        @media (max-width: 768px) {
 
-    .guru-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
+            .guru-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
 
-    .foto-guru img {
-        width: 220px;
-        height: 220px;
-    }
+            .foto-guru img {
+                width: 220px;
+                height: 220px;
+            }
 
-    .biodata-guru h3 {
-        font-size: 24px;
-    }
+            .biodata-guru h3 {
+                font-size: 24px;
+            }
 
-    .info-guru {
-        text-align: left;
-    }
-}
-.guru-custom{
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 40px;
-}
+            .info-guru {
+                text-align: left;
+            }
+        }
+
+        .guru-custom {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 40px;
+        }
     </style>
 </head>
 
@@ -877,34 +884,35 @@
     </section>
 
     <section id="guru" class="guru">
-    <h2>WALI KELAS XII RPL 1</h2>
-
+        
         <!-- FOTO GURU -->
         <div class="guru-custom">
 
             <div class="foto-guru">
                 <img src="{{ asset('image/pepi.jpeg') }}" alt="Wali Kelas XII RPL 1">
             </div>
-            
+
             <!-- BIODATA / TEKS -->
             <div class="biodata-guru">
                 <h3>Wali Kelas XII RPL 1</h3>
 
-            <p>
-                Kami adalah keluarga besar XII RPL 1,
-                kelas industri Rekayasa Perangkat Lunak
-                yang kreatif, inovatif, dan penuh semangat.
-                Bersama-sama kami belajar, berkarya,
-                dan mengembangkan kemampuan di bidang teknologi
-                untuk meraih masa depan yang lebih baik.
-            </p>
+                <p>
+                    Kami adalah keluarga besar XII RPL 1,
+                    kelas industri Rekayasa Perangkat Lunak
+                    yang kreatif, inovatif, dan penuh semangat.
+                    Bersama-sama kami belajar, berkarya,
+                    dan mengembangkan kemampuan di bidang teknologi
+                    untuk meraih masa depan yang lebih baik.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <div class="siswa-container" id="siswa">
 
         <h2>STUDENTS XII RPL 1</h2>
+
+        <p class="siswa-subtitle">Kenangan, cerita, dan kebersamaan kita.</p>
 
         <div class="siswa-grid">
 

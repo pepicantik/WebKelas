@@ -230,7 +230,7 @@
                                                 <img src="{{ url('storage/' . $s->image) }}" alt="" height="100px">
                                             </td>
                                             <td style="vertical-align: middle">{{ $s->nama_lengkap }}</td>
-                                            <td style="vertical-align: middle">{{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</td>
+                                            <td style="vertical-align: middle">{{ $s->tempat_lahir }}, {{ \Carbon\Carbon::parse($s->tgl_lahir)->format('d-m-Y') }}</td>
                                             <td style="white-space: nowrap; vertical-align:middle;">
                                                 <div class="d-flex gap-2 flex-nowrap justify-content-center">
                                                     <button type="button" class="btn btn-aksi-detail" data-bs-toggle="modal" data-bs-target="#detailSiswa{{ $s->id }}"> Detail </button>
@@ -258,7 +258,7 @@
                                                             <div>
                                                                 <h2 class="mb-4">{{ $s->nama_lengkap }}</h2>
                                                                 <p class="mb-4"><strong>Tempat, Tanggal Lahir :</strong>
-                                                                    {{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</p>
+                                                                    {{ $s->tempat_lahir }}, {{ \Carbon\Carbon::parse($s->tgl_lahir)->format('d-m-Y') }}</p>
                                                                 <hr class="modal-short-line">
                                                                 <p class="mb-4"><strong>Hobi :</strong>
                                                                     {{ $s->hobi }}</p>
