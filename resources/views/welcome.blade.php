@@ -889,7 +889,7 @@
         <div class="guru-custom">
 
             <div class="foto-guru">
-                <img src="{{ asset('image/pepi.jpeg') }}" alt="Wali Kelas XII RPL 1">
+                <img src="{{ asset('image/juhon.jpg') }}" alt="Wali Kelas XII RPL 1">
             </div>
 
             <!-- BIODATA / TEKS -->
@@ -945,7 +945,7 @@
                                     <div>
                                         <h2 class="mb-4">{{ $s->nama_lengkap }}</h2>
                                         <p class="mb-4"><strong>Tempat, Tanggal Lahir :</strong>
-                                            {{ $s->tempat_lahir }}, {{ $s->tgl_lahir }}</p>
+                                            {{ $s->tempat_lahir }}, {{ \Carbon\Carbon::parse($s->tgl_lahir)->format('d-m-Y') }}</p>
                                         <hr class="modal-short-line">
                                         <p class="mb-4"><strong>Hobi :</strong> {{ $s->hobi }}</p>
                                         <hr class="modal-short-line">
